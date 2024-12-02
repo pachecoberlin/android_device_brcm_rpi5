@@ -7,6 +7,9 @@
 # Inherit device configuration
 $(call inherit-product, device/brcm/rpi5/device.mk)
 
+#Cinemo
+#$(call inherit-product, vendor/cinemo/cars/connect_screens_service/product/build/connect_screens_service.mk)
+
 DEVICE_CAR_PATH := device/brcm/rpi5/car
 
 PRODUCT_AAPT_CONFIG := normal mdpi hdpi
@@ -65,6 +68,21 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_COPY_FILES += \
     $(DEVICE_CAR_PATH)/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml
+    
+# Display configuration
+PRODUCT_PRODUCT_PROPERTIES += \
+    hwservicemanager.external.displays=0,1920,720,320,0,1,1920,720,320,0
+PRODUCT_PROPERTIES += \
+    hwservicemanager.external.displays=0,1920,720,320,0,1,1920,720,320,0
+PRODUCT_VENDOR_PROPERTIES += \
+    hwservicemanager.external.displays=0,1920,720,320,0,1,1920,720,320,0
+    
+# USB->HDMI config for touch
+PRODUCT_COPY_FILES += \
+    $(DEVICE_CAR_PATH)/input-port-associations.xml:$(TARGET_COPY_OUT_VENDOR)/etc/input-port-associations.xml \
+    $(DEVICE_CAR_PATH)/input-port-associations.xml:etc/input-port-associations.xml \
+    $(DEVICE_CAR_PATH)/input-port-associations.xml:$(TARGET_COPY_OUT_VENDOR)/etc/input_port_associations.xml \
+    $(DEVICE_CAR_PATH)/input-port-associations.xml:etc/input_port_associations.xml
 
 # EVS
 ENABLE_CAREVSSERVICE_SAMPLE := true

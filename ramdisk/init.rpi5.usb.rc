@@ -1,4 +1,7 @@
 on boot
+    setprop service.adb.root 1
+    setprop sys.usb.config adb
+    exec u:r:init:s0 -- /system/bin/iptables -A INPUT -p tcp --dport 5555 -j ACCEPT
     mount configfs none /config
     mkdir /config/usb_gadget/g1 0770
     mkdir /config/usb_gadget/g1/strings/0x409 0770
@@ -87,3 +90,9 @@ on property:sys.usb.controller=*
     mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
     mount functionfs ptp /dev/usb-ffs/ptp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
     setprop sys.usb.configfs 2
+    
+service adbd /sbin/adbd
+    class main
+    socket adbd stream 660 system system
+    disabled
+    seclabel u:r:adbd:s0

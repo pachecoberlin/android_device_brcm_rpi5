@@ -17,6 +17,31 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--
+        Lists all occupant (= driver + passenger) zones available in the car.
+        Some examples are:
+        <item>occupantZoneId=0,occupantType=DRIVER,seatRow=1,seatSide=driver</item>
+        <item>occupantZoneId=1,occupantType=FRONT_PASSENGER,seatRow=1,seatSide=oppositeDriver</item>
+        <item>occupantZoneId=2,occupantType=REAR_PASSENGER,seatRow=2,seatSide=left</item>
+        <item>occupantZoneId=3,occupantType=REAR_PASSENGER,seatRow=2,seatSide=right</item>
+
+        occupantZoneId: Unique unsigned integer id to represent each passenger zone. Each zone
+                        should have different id.
+        occupantType: Occupant type for the display. Use * part from
+                       CarOccupantZoneManager.OCCUPANT_TYPE_* like DRIVER, FRONT_PASSENGER,
+                       REAR_PASSENGER and etc.
+        seatRow: Integer telling which row the seat is located. Row 1 is for front seats.
+        seatSide: left/center/right for known side. Or can use driver/center/oppositeDriver to
+                  handle both right-hand driving and left-hand driving in one place.
+                  If car's RHD / LHD is not specified, LHD will be assumed and driver side becomes
+                  left.
+    -->
+    <string-array translatable="false" name="config_occupant_zones">
+        <item>occupantZoneId=0,occupantType=DRIVER,seatRow=1,seatSide=driver</item>
+        <item>occupantZoneId=1,occupantType=FRONT_PASSENGER,seatRow=1,seatSide=oppositeDriver</item>
+        <!--item>occupantZoneId=0,occupantType=REAR_PASSENGER,seatRow=2,seatSide=left</item>
+        <item>occupantZoneId=1,occupantType=REAR_PASSENGER,seatRow=2,seatSide=right</item-->
+    </string-array>
 
     <!--
         Specifies configuration of displays in system telling its usage / type and assigned
@@ -48,7 +73,7 @@
     -->
     <string-array translatable="false" name="config_occupant_display_mapping">
         <item>displayPort=0,displayType=MAIN,occupantZoneId=0,inputTypes=TOUCH_SCREEN|DPAD_KEYS|NAVIGATE_KEYS|ROTARY_NAVIGATION</item>
-        <item>displayPort=1,displayType=INSTRUMENT_CLUSTER,occupantZoneId=0,inputTypes=DPAD_KEYS</item>
+        <item>displayPort=1,displayType=MAIN,occupantZoneId=1,inputTypes=TOUCH_SCREEN</item>
     </string-array>
 
     <!-- Specifies notice UI that will be launched when user starts a car or do user
