@@ -281,3 +281,7 @@ PRODUCT_COPY_FILES += \
 
 # Window extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
+#ADB over ethernet
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.adb.tcp.port=5555
