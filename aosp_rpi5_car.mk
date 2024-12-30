@@ -72,10 +72,6 @@ PRODUCT_COPY_FILES += \
 # Display configuration
 PRODUCT_PRODUCT_PROPERTIES += \
     hwservicemanager.external.displays=0,1920,720,320,0,1,1920,720,320,0
-PRODUCT_PROPERTIES += \
-    hwservicemanager.external.displays=0,1920,720,320,0,1,1920,720,320,0
-PRODUCT_VENDOR_PROPERTIES += \
-    hwservicemanager.external.displays=0,1920,720,320,0,1,1920,720,320,0
     
 # USB->HDMI config for touch
 PRODUCT_COPY_FILES += \
