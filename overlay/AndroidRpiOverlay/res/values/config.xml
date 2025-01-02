@@ -121,4 +121,27 @@
     <bool name="config_cecTvSendStandbyOnSleepEnabled_default">false</bool>
     <bool name="config_cecTvSendStandbyOnSleepDisabled_default">true</bool>
 
+	<!-- Here the multi-user feature configuration begins
+	Some values are allready set for car products in packages/services/Car/car_product/rro/overlay-config/androidRRO/res/values/config.xml-->
+	<!--  Maximum number of supported users -->
+	<!-- <integer name="config_multiuserMaximumUsers">1</integer> -->
+	<!-- Maximum number of users we allow to be running at a time -->
+    <!-- <integer name="config_multiuserMaxRunningUsers">1</integer> -->
+	<!--  Whether Multiuser UI should be shown -->
+	<!-- <bool name="config_enableMultiUserUI">false</bool> -->
+	<!-- Show multiuser switcher by default, unless the user specifically disables it. -->
+    <!-- <bool name="config_showUserSwitcherByDefault">false</bool> -->
+	<!-- Flag specifying whether user-switch operations have custom UI. When false, user-switch
+         UI is handled by ActivityManagerService. On AAOS, this value should be true since the
+         UserSwitchUi is implemented by Car SystemUI.-->
+    <!-- <bool name="config_customUserSwitchUi">false</bool> -->
+
+
+
+	<bool name="config_multiuserVisibleBackgroundUsers">true</bool>
+
+	<bool name="config_multiuserVisibleBackgroundUsersOnDefaultDisplay">true</bool>
+
+	<bool name="config_enableMultipleAdmins">true</bool>
+
 </resources>
