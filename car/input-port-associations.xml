@@ -1,4 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ports>
-    <port display="0" input="usb-xhci-hcd.0.auto-1.1.1/input0"/>
-    <port display="1" input="usb-xhci-hcd.0.auto-1.1.2/input0"/>
+    <port display="0" input="usb-xhci-hcd.0-1/input0"/>
+    <port display="1" input="usb-xhci-hcd.1-1/input0"/>
 </ports>

@@ -75,10 +75,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     
 # USB->HDMI config for touch
 PRODUCT_COPY_FILES += \
-    $(DEVICE_CAR_PATH)/input-port-associations.xml:$(TARGET_COPY_OUT_VENDOR)/etc/input-port-associations.xml \
-    $(DEVICE_CAR_PATH)/input-port-associations.xml:etc/input-port-associations.xml \
-    $(DEVICE_CAR_PATH)/input-port-associations.xml:$(TARGET_COPY_OUT_VENDOR)/etc/input_port_associations.xml \
-    $(DEVICE_CAR_PATH)/input-port-associations.xml:etc/input_port_associations.xml
+    $(DEVICE_CAR_PATH)/input-port-associations.xml:$(TARGET_COPY_OUT_VENDOR)/etc/input-port-associations.xml
 
 # EVS
 ENABLE_CAREVSSERVICE_SAMPLE := true
